@@ -1,0 +1,27 @@
+--Create a clothing store database
+
+CREATE TABLE clothing_store (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, color TEXT, gender TEXT, size TEXT, price INTEGER);
+
+INSERT INTO clothing_store VALUES (1, "Pants", 6, "red", "female", "S", "25.99");
+INSERT INTO clothing_store VALUES (2, "Sweater", 4, "grey", "male", "M", "34.99");
+INSERT INTO clothing_store VALUES (3, "Long Sleeve", 8, "tan", "male", "XL", "19.99");
+INSERT INTO clothing_store VALUES (4, "Cargo Pants", 7, "brown", "female", "L", "23.99");
+INSERT INTO clothing_store VALUES (5, "Shorts", 5, "yellow", "male", "M", "15.00");
+INSERT INTO clothing_store VALUES (6, "Gloves", 4, "black", "male", "S", "08.00");
+INSERT INTO clothing_store VALUES (7, "Boots", 7, "white", "female", "XS", "28.00");
+INSERT INTO clothing_store VALUES (8, "Jeans", 12, "blue", "male", "L", "32.00");
+INSERT INTO clothing_store VALUES (9, "Underwear", 8, "grey", "male", "M", "15.00");
+INSERT INTO clothing_store VALUES (10, "Necklace", 5, "gold", "female", "M", "12.00");
+INSERT INTO clothing_store VALUES (11, "Sneakers", 15, "black", "male", "S", "25.99");
+INSERT INTO clothing_store VALUES (12, "Socks", 12, "white", "female", "S", "12.99");
+INSERT INTO clothing_store VALUES (13, "Jackets", 14, "red", "male", "M", "16.99");
+INSERT INTO clothing_store VALUES (14, "Hats", 6, "green", "female", "S", "07.99");
+INSERT INTO clothing_store VALUES (15, "Beanies", 5, "blue", "male", "M", "06.99");
+
+--display the database by price that is greater than $5
+
+SELECT * FROM clothing_store WHERE price > 5 ORDER BY price;
+
+--what is the total quantity of each item?
+
+SELECT name, SUM (quantity) FROM clothing_store GROUP BY name;
